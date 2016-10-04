@@ -24,4 +24,4 @@ deploy:
         code: ls -la public
     - script:
         name: transfer data
-        code: scp -i $PRIVATEKEY_PATH -P 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -r ./public wercker@nazakin.info:~/hugo
+        code: scp -i $PRIVATEKEY_PATH -P 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -r ./public wercker@133.242.161.107:~/hugo
