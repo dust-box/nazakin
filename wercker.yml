@@ -17,7 +17,7 @@ deploy:
     - create-file:
         name: write key
         filename: $PRIVATEKEY_PATH
-        content: $VPS_KET_PRIVATE
+        content: $VPS_KEY_PRIVATE
         overwrite: true
     - script:
         name: show data
