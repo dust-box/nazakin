@@ -21,3 +21,21 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     - arjen/hugo-build@1.12.1
+
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: nazakin.info
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $SAKURA_VPS_PRIVATE_KEY
+        overwrite: true
+    - script:
+        name: show data
+        code: ls -la public
+    - script:
+        name: transfer data
+        code: scp -i $PRIVATEKEY_PATH -P 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=no -r ./public wercker@nazakin.info:~/hugo
