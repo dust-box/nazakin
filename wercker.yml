@@ -8,6 +8,8 @@ build:
 
 deploy:
   steps:
+    - install-packages:
+        packages: ssh-client
     - add-to-known_hosts:
         hostname: nazakin.info
     - mktemp:
