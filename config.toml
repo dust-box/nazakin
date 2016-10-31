@@ -11,3 +11,14 @@ theme = "casper"
   cover = "/cover.jpg"
   twitterName = "____Dustbox____"
   googleAnalyticsUserID = "UA-86535161-1"
+
+[[menu.main]]
+  name = "Home"
+  weight = -120
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "About"
+  weight = -110
+  identifier = "about"
+  url = "/about"
