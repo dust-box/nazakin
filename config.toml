@@ -4,8 +4,8 @@ title = "DUSTBOX"
 theme = "casper"
 
 [Params]
-name: "dustbox"
-thumbnail: "/icon.jpg"
+name = "dustbox"
+thumbnail = "/icon.jpg"
 description = "世にモンエナのあらんことを"
 hideHUGOSupport = true
 logo = "/icon.jpg"
