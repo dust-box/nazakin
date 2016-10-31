@@ -12,4 +12,4 @@ title = "Hello World!!"
 
 +++
 
-テスト投稿です。
+Werckerテスト
