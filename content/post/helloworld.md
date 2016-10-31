@@ -7,7 +7,7 @@ image = ""
 menu = ""
 share = true
 slug = "2016-10-31/wercker"
-tags = []
+tags = ["notes"]
 title = "そうだ、ここに鯖を立てよう"
 
 +++
