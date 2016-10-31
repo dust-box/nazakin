@@ -3,11 +3,10 @@ languageCode = "ja"
 title = "DUSTBOX"
 theme = "casper"
 
-[Params]
-name = "dustbox"
-thumbnail = "/icon.jpg"
-description = "世にモンエナのあらんことを"
-hideHUGOSupport = true
-logo = "/icon.jpg"
-cover = "/cover.jpg"
-twitterName = "____Dustbox____"
+[params]
+  author = "dustbox"
+  description = "世にモンエナのあらんことを"
+  hideHUGOSupport = true
+  logo = "/icon.jpg"
+  cover = "/cover.jpg"
+  twitterName = "____Dustbox____"

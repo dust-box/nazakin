@@ -9,7 +9,7 @@ menu = ""
 comments = true
 image = ""
 share = true
-author = ""
+author = "dustbox"
 date = "2016-10-31T13:07:51+09:00"
 
 +++
