@@ -1,8 +1,9 @@
-baseurl = "http://nazakin.info/"
+baseurl = "https://nazakin.net/"
 languageCode = "ja"
-title = "Broken Relations"
+title = "DUSTBOX"
 theme = "casper"
 
 [params]
 author = "nagisa"
-hideHUGOSupport = false
+description = "世にモンエナのあらんことを"
+hideHUGOSupport = true
