@@ -1,6 +1,6 @@
 +++
 author = ""
-slug = "post-title"
+slug = "voice-diary"
 tags = [
   "notes",
 ]
