@@ -2,14 +2,15 @@ baseurl = "https://nazakin.net/"
 languageCode = "ja"
 title = "DUSTBOX"
 theme = "casper"
+paginate = 5
 
 [params]
-  author = "dustbox"
+  author = "Gomibako"
   description = "世にモンエナのあらんことを"
   hideHUGOSupport = true
   logo = "/icon.jpg"
   cover = "/cover.jpg"
-  twitterName = "____Dustbox____"
+  twitterName = "____Gomibako____"
   googleAnalyticsUserID = "UA-86535161-1"
 
 [[menu.main]]
