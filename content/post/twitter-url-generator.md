@@ -12,6 +12,9 @@ author = "nagisa"
 
 +++
 
+Twitterのツイートリンク作成ツール  
+主に仕事用<!--more-->
+
 <div style="margin-bottom:40px;">
   <style scoped="scoped">
   label {
@@ -105,8 +108,5 @@ var tweetGenInit = function() {
 
 window.addEventListener('DOMContentLoaded', tweetGenInit);
 </script>
-
-Twitterのツイートリンク作成ツール  
-主に仕事用
 
 encodeURIComponentをコンソールに突っ込むのが面倒だった。
