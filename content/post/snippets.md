@@ -7,7 +7,7 @@ image = ""
 menu = ""
 share = true
 slug = "snippets-01"
-tags = ["note"]
+tags = ["notes"]
 title = "アコーディオンメニューのスニペット"
 
 +++
