@@ -6,7 +6,7 @@ draft = false
 image = ""
 menu = ""
 share = true
-slug = "post-title"
+slug = "snippets-01"
 tags = ["note"]
 title = "アコーディオンメニューのスニペット"
 
