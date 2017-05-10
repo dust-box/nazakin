@@ -5,7 +5,7 @@ tags = [
   "notes",
 ]
 comments = true
-draft = false
+draft = true
 image = ""
 share = true
 menu = ""
