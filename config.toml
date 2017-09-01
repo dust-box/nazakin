@@ -10,7 +10,6 @@ paginate = 5
   hideHUGOSupport = true
   logo = "/icon.jpg"
   cover = "/cover.jpg"
-  twitterName = "____Gomibako____"
   googleAnalyticsUserID = "UA-86535161-1"
 
 [[menu.main]]
