@@ -10,7 +10,7 @@ paginate = 5
   hideHUGOSupport = true
   logo = "/icon2.jpg"
   cover = "/cover.jpg"
-  googleAnalyticsUserID = "UA-86535161-1"
+  googleAnalyticsUserID = "UA-69409018-3"
 
 [[menu.main]]
   name = "Home"
