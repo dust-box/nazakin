@@ -8,7 +8,7 @@ paginate = 5
   author = "Gomibako"
   description = "世にモンエナのあらんことを"
   hideHUGOSupport = true
-  logo = "/icon2.jpg"
+  logo = "icon2.jpg"
   cover = "/cover.jpg"
   googleAnalyticsUserID = "UA-69409018-3"
 
