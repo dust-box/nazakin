@@ -1,0 +1,27 @@
+<header class="header">
+    <div class="container">
+        <div class="header-body">
+            <h1 class="sitename">
+                <a href="{{ .RelPermalink }}">
+                    {{ if .Site.Params.logo }}
+                        <img
+                            src="{{ .Site.Params.logo | relURL }}"
+                            alt="{{ .Site.Title }}">
+                    {{ end }}
+                    {{ .Site.Title }}
+                </a>
+            </h1>
+        </div>
+        <nav class="gnav">
+            <ul class="gnav-body">
+                {{ $currentNode := . }}
+                {{ with .Site.Menus.main }}
+                {{ range sort . "Weight" "asc" }}
+                    {{ .Pre }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,76 @@
+/// 一覧用各記事
+
+/// ラッパ
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 -40px;
+}
+
+.item {
+    padding: 0 0 40px 40px;
+    width: percentage(1/3);
+
+    @media #{$medium-and-down} {
+        width: percentage(1/2);
+    }
+    
+    @media #{$xs-and-down} {
+        width: percentage(1/1);
+    }
+
+    a {
+        color: $base-color;
+        display: block;
+
+        &:hover {
+            color: transparentize($base-color, .5);
+        }
+    }
+
+    &-thumbnail {
+        overflow: hidden;
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            padding: percentage(675/1200) 0 0;
+            width: percentage(1/1);
+        }
+
+        img {
+            left: percentage(1/2);
+            position: absolute;
+            top: percentage(1/2);
+            transform: translate(-50%,-50%);
+            transition: transform $base-duration $base-easing;
+            vertical-align: top;
+            width: percentage(1/1);
+        }
+    }
+
+    a:hover &-thumbnail img {
+        transform: translate(-50%,-50%) scale(1.05,1.05);
+    }
+
+    &-title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+
+    &-excerpt {
+        font-size: 1.4rem;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &-meta {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        margin: 20px 0 0;
+    }
+}

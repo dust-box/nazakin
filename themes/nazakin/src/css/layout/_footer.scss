@@ -1,0 +1,39 @@
+/// フッター
+.footer {
+    &-body {
+        border-top: solid 1px $base-color;
+        display: flex;
+        justify-content: space-between;
+        letter-spacing: 2px;
+        padding: 20px 0;
+    }
+
+    a {
+        color: $base-color;
+
+        &:hover {
+            color: darken($base-color, 40%);
+        }
+    }
+
+    &-nav {
+        font-size: 1.2rem;
+    }
+}
+
+/// 下階層
+.single .footer {
+    bottom: 0;
+    position: absolute;
+    width: percentage(1/1);
+
+    &-body {
+        border-top: none;
+        padding: 0 0 5px;
+        color: $white;
+    }
+
+    a {
+        color: $white;
+    }
+}

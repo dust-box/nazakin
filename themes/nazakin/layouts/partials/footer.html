@@ -1,0 +1,24 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-body">
+            <small class="copyright">
+                <a href="{{ .RelPermalink }}">
+                    {{ if .Site.Copyright }}
+                        {{ .Site.Copyright | safeHTML }}
+                    {{ else }}
+                        &copy; {{ .Site.Title }}
+                    {{ end }}
+                </a>
+            </small>
+            <nav class="footer-nav">
+                {{ if .Site.Params.RSSLink}}
+                <a class="subscribe-button icon-feed" href="{{.Site.Params.RSSLink }}">Subscribe</a>
+                {{ else }}
+                <a class="subscribe-button icon-feed" href="{{if .IsNode}}{{.RSSLink}}{{else}}{{"index.xml" | relURL}}{{end}}">Subscribe</a>
+                {{ end }}
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ "js/main.js" | relURL }}"></script>

@@ -1,0 +1,21 @@
+.button {
+    &-more {
+        border: solid 1px $link-color;
+        background-color: $link-color;
+        border-radius: 15px;
+        color: $white;
+        display: block;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        margin: 0 auto;
+        padding: 5px 15px;
+        text-align: center;
+        transition-property: background-color, color;
+        max-width: 300px;
+
+        &:hover {
+            background-color: transparent;
+            color: $link-color;
+        }
+    }
+}

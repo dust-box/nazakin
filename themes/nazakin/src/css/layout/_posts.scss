@@ -1,0 +1,67 @@
+/// 記事一覧
+.posts {
+    border-color: $base-color;
+    border-style: solid;
+    border-width: 1.5px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+/// 記事一覧 アイテム
+.post {
+    border-color: $base-color;
+    border-style: solid;
+    border-width: 1.5px;
+    padding: 20px 15px;
+    width: percentage(1/2);
+
+    @media #{$small-and-down} {
+        width: percentage(1/1);
+    }
+
+    &-title {
+        font-size: 2.4rem;
+        font-weight: 500;
+
+        @media #{$small-and-down} {
+            font-size: 2rem;
+        }
+
+        a {
+            color: $base-color;
+        }
+    }
+
+    &-footer {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0 0 -5px;
+
+        &-item {
+            padding: 0 0 0 5px;
+        }
+    }
+
+    &-author {
+        align-items: center;
+        display: flex;
+        font-size: 1.4rem;
+
+        &-thumb {
+            border-radius: percentage(1/1);
+            height: 30px;
+            margin: 0 5px 0 0;
+            width: 30px;
+        }
+    }
+
+    &-tags {
+        font-size: 1.4rem;
+    }
+
+    &-date {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,66 @@
+// メニュー
+.gnav {
+    &-body {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 0 -15px;
+        padding: 0;
+
+        @media #{$small-and-down} {
+            margin-top: 20px;
+        }
+
+        li {
+            padding: 0 0 0 15px;
+
+            &:not(:first-child) {
+                padding: 0 15px 0 15px;
+                position: relative;
+
+                &:before {
+                    background-color: $base-color;
+                    content: '';
+                    display: block;
+                    height: 15px;
+                    left: 6px;
+                    position: absolute;
+                    top: percentage(1/2);
+                    transform: translate(0,-50%) rotate(20deg);
+                    transform-origin: center;
+                    width: 2px;
+                }
+            }
+
+            a {
+                color: $base-color;
+                display: block;
+                font-size: 1.4rem;
+                font-weight: 500;
+                letter-spacing: 3px;
+                padding: 5px 20px;
+                position: relative;
+                transition: color $base-duration $base-easing;
+
+                &:hover {
+                    color: lighten($base-color, 40%);
+                }
+
+                &:after {
+                    background: $base-color;
+                    content: '';
+                    display: block;
+                    height: 2px;
+                    transform: scale(0,1);
+                    transform-origin: right top;
+                    transition: transform $base-duration $base-easing;
+                    width: percentage(1/1);
+                }
+
+                &:hover:after {
+                    transform: scale(1,1);
+                    transform-origin: left top;
+                }
+            }
+        }
+    }
+}

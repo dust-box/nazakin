@@ -1,0 +1,46 @@
+/// ナビゲーション
+.nav {
+    &-toggle {
+        border: none;
+        border-radius: 0;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        padding: 15px 16px;
+        text-transform: uppercase;
+        transition: all 0.25s ease-in-out;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-body {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        li {
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+
+            a {
+                color: $base-color;
+                display: block;
+                line-height: 1;
+                padding: 18px 15px;
+                text-decoration: none;
+                transition-property: background-color, color;
+                transition-duration: $base-duration;
+                transition-timing-function: $base-easing;
+
+                &:hover {
+                    background-color: transparentize($black, .7);
+                    color: $white;
+                }
+            }
+        }
+    }
+}

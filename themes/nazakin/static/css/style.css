@@ -1,0 +1,713 @@
+@import url(https://fonts.googleapis.com/css?family=Rock+Salt);@charset "UTF-8";
+/*
+ * Vendor
+ */
+/*! sanitize.css v4.1.0 | CC0 License | github.com/jonathantneal/sanitize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+template,
+[hidden] {
+  display: none;
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  cursor: default;
+  font-family: sans-serif;
+  line-height: 1.5;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+hr {
+  height: 0;
+  overflow: visible;
+}
+
+nav ol,
+nav ul {
+  list-style: none;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+small {
+  font-size: 83.3333%;
+}
+
+sub,
+sup {
+  font-size: 83.3333%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+::-moz-selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+img {
+  border-style: none;
+}
+
+svg {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  outline-width: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+legend {
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-cancel-button,
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+[aria-busy='true'] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled] {
+  cursor: default;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+[hidden][aria-hidden='false'] {
+  clip: rect(0, 0, 0, 0);
+  display: inherit;
+  position: absolute;
+}
+
+[hidden][aria-hidden='false']:focus {
+  clip: auto;
+}
+
+/*
+ * Foundations
+ */
+/*
+ * 変数定義
+ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: white;
+  font-family: "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4   ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  font-size: 1.6rem;
+}
+
+a {
+  color: #2267c2;
+  text-decoration: none;
+  transition: color 300ms ease-out;
+}
+
+a:hover {
+  color: #174481;
+}
+
+/**
+ * Layout
+ */
+.header-body {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-body {
+    padding: 30px 0 10px;
+  }
+}
+
+.footer-body {
+  border-top: solid 1px #09062b;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 2px;
+  padding: 20px 0;
+}
+
+.footer a {
+  color: #09062b;
+}
+
+.footer a:hover {
+  color: black;
+}
+
+.footer-nav {
+  font-size: 1.2rem;
+}
+
+.single .footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.single .footer-body {
+  border-top: none;
+  padding: 0 0 5px;
+  color: white;
+}
+
+.single .footer a {
+  color: white;
+}
+
+.post {
+  margin: 0 auto 100px;
+  max-width: 700px;
+}
+
+.post-header {
+  margin: 50px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .post-header {
+    margin: 30px 0;
+  }
+}
+
+.post-title {
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+@media only screen and (max-width: 768px) {
+  .post-title {
+    font-size: 2.8rem;
+  }
+}
+
+.post-meta {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.post-content p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.5;
+  letter-spacing: 2px;
+  margin: 2em 0 2em;
+}
+
+.post-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/**
+ * Components
+ */
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 -40px;
+}
+
+.item {
+  padding: 0 0 40px 40px;
+  width: 33.33333%;
+}
+
+@media only screen and (max-width: 992px) {
+  .item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .item {
+    width: 100%;
+  }
+}
+
+.item a {
+  color: #09062b;
+  display: block;
+}
+
+.item a:hover {
+  color: rgba(9, 6, 43, 0.5);
+}
+
+.item-thumbnail {
+  overflow: hidden;
+  position: relative;
+}
+
+.item-thumbnail:before {
+  content: '';
+  display: block;
+  padding: 56.25% 0 0;
+  width: 100%;
+}
+
+.item-thumbnail img {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 300ms ease-out;
+  vertical-align: top;
+  width: 100%;
+}
+
+a:hover .item-thumbnail img {
+  transform: translate(-50%, -50%) scale(1.05, 1.05);
+}
+
+.item-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.item-excerpt {
+  font-size: 1.4rem;
+}
+
+.item-excerpt p {
+  margin: 0;
+}
+
+.item-meta {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin: 20px 0 0;
+}
+
+.read-next {
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .read-next {
+    flex-flow: column;
+  }
+}
+
+.read-next-story {
+  background-size: cover;
+  display: block;
+  flex: 1;
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.read-next-story:before {
+  background-color: rgba(0, 0, 0, 0.4);
+  content: '';
+  display: block;
+  padding: 40% 0 0;
+  transition: background-color 300ms ease-out;
+  width: 100%;
+  max-width: 100%;
+}
+
+.read-next-story:hover:before {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.read-next-title {
+  color: white;
+  font-size: 2.8rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 0 15px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .read-next-title {
+    font-size: 2.4rem;
+  }
+}
+
+/**
+ * Scope
+ */
+.sitename {
+  font-family: "Rock Salt", cursive;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.89286em;
+  margin: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .sitename {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sitename {
+    font-size: 1.6rem;
+  }
+}
+
+.sitename a {
+  color: #09062b;
+  display: block;
+  padding: 10px;
+  transition: color 300ms ease-out;
+}
+
+.sitename a:hover {
+  color: #170f6e;
+}
+
+.sitename img {
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto 20px;
+  width: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .sitename img {
+    width: 30px;
+  }
+}
+
+.gnav-body {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 0 -15px;
+  padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .gnav-body {
+    margin-top: 20px;
+  }
+}
+
+.gnav-body li {
+  padding: 0 0 0 15px;
+}
+
+.gnav-body li:not(:first-child) {
+  padding: 0 15px 0 15px;
+  position: relative;
+}
+
+.gnav-body li:not(:first-child):before {
+  background-color: #09062b;
+  content: '';
+  display: block;
+  height: 15px;
+  left: 6px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%) rotate(20deg);
+  transform-origin: center;
+  width: 2px;
+}
+
+.gnav-body li a {
+  color: #09062b;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding: 5px 20px;
+  position: relative;
+  transition: color 300ms ease-out;
+}
+
+.gnav-body li a:hover {
+  color: #2e1fde;
+}
+
+.gnav-body li a:after {
+  background: #09062b;
+  content: '';
+  display: block;
+  height: 2px;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform 300ms ease-out;
+  width: 100%;
+}
+
+.gnav-body li a:hover:after {
+  transform: scale(1, 1);
+  transform-origin: left top;
+}
+
+.loading {
+  background: white;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  transition: opacity .5s ease-out;
+  left: 0;
+  width: 100%;
+}
+
+.loading.loaded {
+  opacity: 0;
+}
+
+/**
+ * Utility
+ */
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1130px;
+}
+
+.content {
+  margin: 100px 0 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    margin: 50px 0 0;
+  }
+}
+
+.single {
+  position: relative;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+<div class="single">
+    {{ partial "header.html" . }}
+
+    <main class="content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">{{ .Title }}</h1>
+                    <small>{{ .Description }}</small>
+        
+                    <div class="post-meta">
+                        {{ if eq .Section "post"}}
+                        <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+                            {{ .Date.Format "Jan 2, 2006" }}
+                        </time>
+                        {{end}}
+                        {{ range .Params.tags }}
+                        <span class="post-tag small"><a href="{{$.Site.BaseURL}}/tags/{{ . | urlize }}/">#{{ . }}</a></span>
+                        {{ end }}
+                    </div>
+                </header>
+
+                <div class="post-content">
+                    {{ .Content }}
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <nav class="read-next">
+    {{ with .NextInSection }}
+        <a class="read-next-story" style="{{ if .Params.image }}background-image: url({{ .Params.image | relURL }}){{ else }}no-cover{{ end }}" href="{{ .RelPermalink }}">
+            <h3 class="read-next-title">{{.Title}}</h3>
+        </a>
+    {{ end }}
+    {{ with .PrevInSection }}
+        <a class="read-next-story prev" style="{{ if .Params.image }}background-image: url({{ .Params.image  | relURL}}){{ else }}no-cover{{ end }}" href="{{ .RelPermalink }}">
+            <h3 class="read-next-title">{{.Title}}</h3>
+        </a>
+    {{ end }}
+    </nav>
+
+    {{ partial "footer.html" . }}
+</div>
+</body>
+</html>

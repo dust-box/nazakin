@@ -1,0 +1,12 @@
+/// ページネーション
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 30px -20px;
+
+    span,
+    a {
+        font-size: 1.4rem;
+        margin: 0 0 0 20px;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+
+{{ partial "header.html" . }}
+
+<main class="content">
+    <div class="container">
+    {{ if not ($.Scratch.Get "paginatedSections") }}
+        {{ if .Site.Params.paginatedsections }}
+            {{ $.Scratch.Set "paginatedSections" .Site.Params.paginatedsections }}
+        {{ else }}
+            {{ $.Scratch.Set "paginatedSections" "post" }}
+        {{ end }}
+    {{ end }}
+
+    {{ $list := where .Data.Pages "Section" "in" ($.Scratch.Get "paginatedSections") }}
+    {{ $list := where $list "Section" "!=" "" }}
+    {{ $paginator := .Paginate ( $list ) }}
+
+        <div class="items" role="listbox">
+            {{ range $index, $page := $paginator.Pages }}
+            <div class="item" role="listitem">
+                <a href="{{ .RelPermalink }}">
+                    <div class="item-thumbnail">
+                        {{ if .Params.Image }}
+                        <img
+                            src="{{ .Params.Image }}"
+                            alt="{{ .Title }}">
+                        {{ end }}
+                    </div>
+                    <h2 class="item-title">{{ .Title }}</h2>
+                    <div class="item-excerpt">
+                        {{ if .Params.excerpt }}
+                            {{ .Params.excerpt }}
+                        {{ else }}
+                            {{ .Summary }}
+                        {{ end }}
+                    </div>
+                    <footer class="item-meta">
+                        <time class="item-date" datetime="{{ .Date.Format "2006-01-02T15:04:04:05Z07:00" | safeHTML }}">
+                            {{ .Date.Format "2 Jan 2006" }}
+                        </time>
+                    </footer>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</main>
+
+{{ partial "footer.html" . }}
+
+</body>
+</html>
