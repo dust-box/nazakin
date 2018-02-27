@@ -1,0 +1,32 @@
+/// シェアボタンズ
+.share {
+    margin: 100px 0 0 -10px;
+
+    @media #{$small-and-down} {
+        margin: 50px 0 0 -10px;
+    }
+
+    &-title {
+        font-size: 1.6rem;
+        margin: 1.5em 0;
+        padding: 0 0 0 10px;
+    }
+
+    a {
+        background-color: $white;
+        border-radius: 14px;
+        border: solid 1px transparentize($base-color, .7);
+        color: $base-color;
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: 0 0 10px 10px;
+        padding: 5px 15px;
+        transition-property: background-color, color;
+
+        &:hover {
+            background-color: $base-color;
+            color: $white;
+        }
+    }
+}

@@ -387,6 +387,12 @@ a:hover {
   max-width: 700px;
 }
 
+@media only screen and (max-width: 768px) {
+  .post {
+    margin: 0 auto 50px;
+  }
+}
+
 .post-header {
   margin: 50px 0;
 }
@@ -426,6 +432,22 @@ a:hover {
   display: block;
   margin: 0 auto;
   max-width: 100%;
+}
+
+.post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+  font-weight: 500;
+}
+
+.post-content h2 {
+  font-size: 2.8rem;
+  margin: 70px 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .post-content h2 {
+    font-size: 2.4rem;
+    margin: 40px 0 20px;
+  }
 }
 
 /**
@@ -687,6 +709,40 @@ a:hover .item-thumbnail img {
 
 .loading.loaded {
   opacity: 0;
+}
+
+.share {
+  margin: 100px 0 0 -10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .share {
+    margin: 50px 0 0 -10px;
+  }
+}
+
+.share-title {
+  font-size: 1.6rem;
+  margin: 1.5em 0;
+  padding: 0 0 0 10px;
+}
+
+.share a {
+  background-color: white;
+  border-radius: 14px;
+  border: solid 1px rgba(9, 6, 43, 0.3);
+  color: #09062b;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 10px 10px;
+  padding: 5px 15px;
+  transition-property: background-color, color;
+}
+
+.share a:hover {
+  background-color: #09062b;
+  color: white;
 }
 
 /**
