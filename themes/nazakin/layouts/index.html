@@ -27,9 +27,7 @@
                 <a href="{{ .RelPermalink }}">
                     <div class="item-thumbnail">
                         {{ if .Params.Image }}
-                        <img
-                            src="{{ .Params.Image }}"
-                            alt="{{ .Title }}">
+                        <item-image src="{{ .Params.Image | relUrl }}" alt="{{ .Title }}"></item-image>
                         {{ end }}
                     </div>
                     <h2 class="item-title">{{ .Title }}</h2>

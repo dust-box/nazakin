@@ -697,20 +697,6 @@ a:hover .item-thumbnail img {
   transform-origin: left top;
 }
 
-.loading {
-  background: white;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  transition: opacity .5s ease-out;
-  left: 0;
-  width: 100%;
-}
-
-.loading.loaded {
-  opacity: 0;
-}
-
 .share {
   margin: 100px 0 0 -10px;
 }

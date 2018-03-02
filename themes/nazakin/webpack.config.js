@@ -16,6 +16,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.vue$/,
+                use: ['vue-loader'],
+            },
+            {
                 test: /\.js/,
                 exclude: /node_modules/,
                 use: {
@@ -55,6 +59,11 @@ module.exports = {
             'node_modules',
             path.resolve(__dirname, 'src/js'),
         ],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            'src': path.resolve(__dirname, '../src'),
+            'tests': path.resolve(__dirname, '../test'),
+        },
     },
     plugins: [
         new ExtractTextPlugin({
@@ -68,6 +77,15 @@ module.exports = {
             options: {
                 context: path.resolve(__dirname, 'src'),
             },
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            },
+        }),
+        new webpack.ProvidePlugin({
+            Vue: ['vue', 'default'],
+            VueRouter: ['vue-router', 'default'],
         }),
         new NotifierPlugin(),
     ],
