@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Rock+Salt);@charset "UTF-8";
+@charset "UTF-8";
 /*
  * Vendor
  */
@@ -317,7 +317,6 @@ body {
   font-family: "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4   ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
   font-size: 1.6rem;
 }
 
@@ -329,6 +328,23 @@ a {
 
 a:hover {
   color: #174481;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  color: #999;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 0.35714em 0 0;
+  text-align: center;
 }
 
 /**

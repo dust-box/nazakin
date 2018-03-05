@@ -10,7 +10,7 @@ WebFont.load({
         ],
         urls: [
             "https://fonts.googleapis.com/earlyaccess/notosansjapanese.css",
-            "https://fonts.googleapis.com/css?family=Noto+Serif",
+            "https://fonts.googleapis.com/css?family=Rock+Salt",
         ],
     },
     timeout: 3000,

@@ -30,7 +30,7 @@ copyright = "&copy; 2017 DUSTBOX."
   identifier = "about"
   url = "/about"
 
-# [outputs]
-#  home = ["HTML", "RSS"]
-#  post = ["HTML", "RSS"]
-#  page = ["HTML", "RSS"]
+[outputs]
+home = ["HTML", "RSS"]
+post = ["HTML", "AMP"]
+page = ["HTML", "AMP"]

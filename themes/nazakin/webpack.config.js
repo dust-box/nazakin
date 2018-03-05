@@ -7,6 +7,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
         'main': `./js/main.js`,
+        'amp': `./js/amp.js`,
     },
     output: {
         path: path.resolve(__dirname, 'static/js'),
@@ -67,7 +68,7 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: '../css/style.css',
+            filename: '../../layouts/partials/css/[name].css',
             allChunks: true,
             disable: false,
         }),

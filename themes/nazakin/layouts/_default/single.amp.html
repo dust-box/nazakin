@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html ⚡>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">
-    {{ partial "semantic.html" }}
+    {{ partial "meta.html" . }}
     <link rel="canonical" href="{{ .Permalink }}">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -14,6 +12,14 @@
         <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
     </noscript>
     <title>{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+    <style amp-custom>
+        {{ replaceRE " +" " " (replaceRE "\n" "" (replaceRE "^@charset \"UTF-8\";" "" ( partial "css/amp.css" . ))) | safeCSS }}
+        {{ with .NextInSection }}.read-next-story { {{ if .Params.image }}background-image: url({{ .Params.image | relURL }});{{ else }}no-cover;{{ end }}}{{ end }}
+        {{ with .PrevInSection }}.read-next-story.prev { {{ if .Params.image }}background-image: url({{ .Params.image | relURL }});{{ else }}no-cover;{{ end }}}{{ end }}
+    </style>
 </head>
 <body>
 {{ with .Site.Params.googleAnalyticsUserID }}
@@ -24,16 +30,113 @@
 </amp-analytics>  
 {{ end }}
 
-<main>
-    <article>
+<div class="single">
+    <header class="header">
         <div class="container">
-            <h1>{{ .Title }}</h1>
-            <div class="body">
-                {{ .Content }}
+            <div class="header-body">
+                <h1 class="sitename">
+                    <a href="{{ .Site.BaseURL }}">
+                        {{ .Site.Title }}
+                    </a>
+                </h1>
+            </div>
+            <nav class="gnav">
+                <ul class="gnav-body">
+                    {{ $currentNode := . }}
+                    {{ with .Site.Menus.main }}
+                    {{ range sort . "Weight" "asc" }}
+                        {{ .Pre }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="content">
+        <div class="container">
+            <article class="post">
+                <header class="post-header">
+                    <h1 class="post-title">{{ .Title }}</h1>
+                    <small>{{ .Description }}</small>
+        
+                    <div class="post-meta">
+                        {{ if eq .Section "post"}}
+                        <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+                            {{ .Date.Format "Jan 2, 2006" }}
+                        </time>
+                        {{end}}
+                        {{ range .Params.tags }}
+                        <span class="post-tag small"><a href="{{$.Site.BaseURL}}/tags/{{ . | urlize }}/">#{{ . }}</a></span>
+                        {{ end }}
+                    </div>
+                </header>
+
+                <div class="post-content">
+                    {{ .Content }}
+                </div>
+
+                <footer class="post-footer">
+                    {{ if ne .Params.share false}}
+                    <aside class="share">
+                        <h4 class="share-title">Share this {{ if .Type }}{{.Type}}{{else}}post{{end}}</h4>
+                        <a href="https://twitter.com/share?text={{ .Title | safeHTML}}&nbsp;-&nbsp;{{ .Site.Title }}&amp;url={{ .Permalink }}" target="_blank">
+                            <span class="hidden">Twitter</span>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank">
+                            <span class="hidden">Facebook</span>
+                        </a>
+                        <a href="http://pinterest.com/pin/create/button/?url={{ .Permalink }}{{ if .Params.pinterestmedia }}&amp;media={{ .Params.pinterestmedia | relURL }}{{ end }}&amp;description={{ .Title | safeHTML}}" target="_blank">
+                            <span class="hidden">Pinterest</span>
+                        </a>
+                        <a href="https://plus.google.com/share?url={{ .Permalink }}" target="_blank">
+                            <span class="hidden">Google+</span>
+                        </a>
+                    </aside>
+                    {{end}}      
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <nav class="read-next">
+    {{ with .NextInSection }}
+        <a class="read-next-story" href="{{ .RelPermalink }}">
+            <h3 class="read-next-title">{{.Title}}</h3>
+        </a>
+    {{ end }}
+    {{ with .PrevInSection }}
+        <a class="read-next-story prev" href="{{ .RelPermalink }}">
+            <h3 class="read-next-title">{{.Title}}</h3>
+        </a>
+    {{ end }}
+    </nav>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-body">
+                <small class="copyright">
+                    <a href="{{ .Site.BaseURL }}">
+                        {{ if .Site.Copyright }}
+                            {{ .Site.Copyright | safeHTML }}
+                        {{ else }}
+                            &copy; {{ .Site.Title }}
+                        {{ end }}
+                    </a>
+                </small>
+                <nav class="footer-nav">
+                    {{ if .Site.Params.RSSLink}}
+                    <a class="subscribe-button icon-feed" href="{{.Site.Params.RSSLink }}">Subscribe</a>
+                    {{ else }}
+                    <a class="subscribe-button icon-feed" href="{{if .IsNode}}{{.RSSLink}}{{else}}{{"index.xml" | relURL}}{{end}}">Subscribe</a>
+                    {{ end }}
+                </nav>
             </div>
         </div>
-    </article>
-</main>
+    </footer>
+</div>
+
 
 </body>
 </html>

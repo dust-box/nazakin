@@ -11411,7 +11411,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_0_webfontloader___default.a.load({
     custom: {
         families: ["Noto Sans Japanese", "Noto Serif"],
-        urls: ["https://fonts.googleapis.com/earlyaccess/notosansjapanese.css", "https://fonts.googleapis.com/css?family=Noto+Serif"]
+        urls: ["https://fonts.googleapis.com/earlyaccess/notosansjapanese.css", "https://fonts.googleapis.com/css?family=Rock+Salt"]
     },
     timeout: 3000,
     loading: () => {
