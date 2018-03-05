@@ -2,7 +2,7 @@
     <div class="container">
         <div class="header-body">
             <h1 class="sitename">
-                <a href="{{ .RelPermalink }}">
+                <a href="{{ .Site.BaseURL }}">
                     {{ if .Site.Params.logo }}
                         <img
                             src="{{ .Site.Params.logo | relURL }}"

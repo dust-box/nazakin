@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-body">
             <small class="copyright">
-                <a href="{{ .RelPermalink }}">
+                <a href="{{ .Site.BaseURL }}">
                     {{ if .Site.Copyright }}
                         {{ .Site.Copyright | safeHTML }}
                     {{ else }}
