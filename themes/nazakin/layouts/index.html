@@ -28,6 +28,8 @@
                     <div class="item-thumbnail">
                         {{ if .Params.Image }}
                         <item-image src="{{ .Params.Image | relURL }}" alt="{{ .Title }}"></item-image>
+                        {{ else }}
+                        <item-image src="{{ "images/_default.jpg" | relURL }}" alt="{{ .Title }}"></item-image>
                         {{ end }}
                     </div>
                     <h2 class="item-title">{{ .Title }}</h2>
