@@ -31,6 +31,6 @@ copyright = "&copy; 2017 DUSTBOX."
   url = "/about"
 
 [outputs]
-home = ["HTML", "RSS"]
-post = ["HTML", "AMP"]
-page = ["HTML", "AMP"]
+home = ["HTML", "RSS", "JSON"]
+post = ["HTML", "AMP", "JSON"]
+page = ["HTML", "AMP", "JSON"]
