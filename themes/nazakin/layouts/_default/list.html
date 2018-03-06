@@ -9,11 +9,38 @@
 
 <main class="content">
     <div class="container">
-        <article class="post">
-            <div class="post-content">
-                待って
+        {{ $paginator := .Paginator }}
+                
+        <div class="items" role="listbox">
+            {{ range $index, $page := $paginator.Pages }}
+            <div class="item" role="listitem">
+                <a href="{{ .RelPermalink }}">
+                    <div class="item-thumbnail">
+                        {{ if .Params.Image }}
+                        <item-image src="{{ .Params.Image | relURL }}" alt="{{ .Title }}"></item-image>
+                        {{ else }}
+                        <item-image src="{{ "images/_default.jpg" | relURL }}" alt="{{ .Title }}"></item-image>
+                        {{ end }}
+                    </div>
+                    <h2 class="item-title">{{ .Title }}</h2>
+                    <div class="item-excerpt">
+                        {{ if .Params.excerpt }}
+                            {{ .Params.excerpt }}
+                        {{ else }}
+                            {{ .Summary }}
+                        {{ end }}
+                    </div>
+                    <footer class="item-meta">
+                        <time class="item-date" datetime="{{ .Date.Format "2006-01-02T15:04:04:05Z07:00" | safeHTML }}">
+                            {{ .Date.Format "2 Jan 2006" }}
+                        </time>
+                    </footer>
+                </a>
             </div>
-        </article>
+            {{ end }}
+        </div>
+
+        {{ partial "pagination.html" $paginator }}
     </div>
 </main>
 

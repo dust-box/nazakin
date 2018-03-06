@@ -25,7 +25,8 @@
 @import
 "component/hero",
 "component/item",
-"component/read-next";
+"component/read-next",
+"component/pager";
 
 /**
  * Scope
@@ -33,7 +34,8 @@
 @import
 "scope/sitename",
 "scope/gnav",
-"scope/share";
+"scope/share",
+"scope/pagination";
 
 /**
  * Utility

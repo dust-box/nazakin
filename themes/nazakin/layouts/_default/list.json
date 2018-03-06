@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "{{ .Site.Title }}",
+    "home_page_url": "{{ .Site.BaseURL }}",
+    "feed_url": "{{ with .OutputFormats.Get "json" -}}{{ .Permalink | safeURL }}{{ end }}",
+    "items": [
+        {{ range $index, $page := .Paginator.Pages }}{{ if $index }},{{ end }}{
+            "id": "{{ .UniqueID }}",
+            "url": "{{ .Permalink }}",
+            "title": "{{ .Title }}",
+            "content_html": "{{ replaceRE " +" " " (replaceRE "\n" "" .Content) | htmlEscape }}",
+            "image": "{{ .Params.Image | absURL }}",
+            "date_published": "{{ .Date }}",
+            "author": "{{ .Params.author }}",
+            "tags": [{{ if .Params.tags }}"{{ delimit .Params.tags "\",\"" }}"{{ end }}]
+        }{{ end }}
+    ]
+}

@@ -600,6 +600,28 @@ a:hover .item-thumbnail img {
   }
 }
 
+.pager {
+  display: inline-block;
+  margin: 0 0 0 20px;
+}
+
+.pager-num {
+  font-size: 1.4rem;
+}
+
+.pager-prev, .pager-next {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 5px 15px;
+  transition-property: color, background-color;
+}
+
+.pager-prev:hover, .pager-next:hover {
+  background-color: #2267c2;
+  color: white;
+}
+
 /**
  * Scope
  */
@@ -745,6 +767,13 @@ a:hover .item-thumbnail img {
 .share a:hover {
   background-color: #09062b;
   color: white;
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 60px -20px;
 }
 
 /**

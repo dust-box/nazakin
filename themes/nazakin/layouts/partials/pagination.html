@@ -1,0 +1,9 @@
+<nav class="pagination">
+    {{ if .HasPrev }}
+        <a class="pager pager-prev" href="{{ .Prev.URL }}">Prev</a>
+    {{ end }}
+    <span class="pager pager-num">{{ .PageNumber }} of {{ .TotalPages }}</span>
+    {{ if .HasNext }}
+        <a class="pager pager-next" href="{{ .Next.URL }}">Next</a>
+    {{ end }}
+</nav>

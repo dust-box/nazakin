@@ -1,0 +1,22 @@
+.pager {
+    display: inline-block;
+    margin: 0 0 0 20px;
+
+    &-num {
+        font-size: 1.4rem;
+    }
+
+    &-prev,
+    &-next {
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 5px 15px;
+        transition-property: color, background-color;
+
+        &:hover {
+            background-color: $link-color;
+            color: $white;
+        }
+    }
+}
