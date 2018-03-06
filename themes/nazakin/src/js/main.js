@@ -1,10 +1,15 @@
 require('../css/style.scss');
 require('component/webfont');
 
-import ItemImage from './component/item-image.vue';
+import router from 'router';
+import store from 'store';
 
-Vue.component('item-image', ItemImage);
+Vue.use(VueRouter);
 
-new Vue({
-    el: '.items',
+const app = new Vue({
+    store,
+    el: '#app',
+    router
 });
+
+store.dispatch('posts/fetchPosts');

@@ -62,9 +62,11 @@ module.exports = {
         ],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
+            'vuex$': 'vuex/dist/vuex.esm.js',
             'src': path.resolve(__dirname, '../src'),
             'tests': path.resolve(__dirname, '../test'),
         },
+        extensions: ['.js', '.scss', '.vue'],
     },
     plugins: [
         new ExtractTextPlugin({
@@ -87,7 +89,9 @@ module.exports = {
         new webpack.ProvidePlugin({
             Vue: ['vue', 'default'],
             VueRouter: ['vue-router', 'default'],
+            Vuex: ['vuex', 'default'],
         }),
         new NotifierPlugin(),
     ],
+    devtool: "source-map",
 };

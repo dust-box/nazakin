@@ -9,6 +9,7 @@
             "url": "{{ .Permalink }}",
             "title": "{{ .Title }}",
             "content_html": "{{ replaceRE " +" " " (replaceRE "\n" "" .Content) | htmlEscape }}",
+            "summary": "{{ if .Params.excerpt }}{{ replaceRE " +" " " (replaceRE "\n" "" .Params.excerpt) | plainify }}{{ else }}{{ replaceRE " +" " " (replaceRE "\n" "" .Summary | plainify) }}{{ end }}",
             "image": "{{ .Params.Image | absURL }}",
             "date_published": "{{ .Date }}",
             "author": "{{ .Params.author }}",

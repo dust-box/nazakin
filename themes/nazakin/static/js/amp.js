@@ -60,19 +60,19 @@
 /******/ 	__webpack_require__.p = "..";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 45);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 19:
+/***/ 45:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(20);
+__webpack_require__(46);
 
 /***/ }),
 
-/***/ 20:
+/***/ 46:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -80,3 +80,4 @@ __webpack_require__(20);
 /***/ })
 
 /******/ });
+//# sourceMappingURL=amp.js.map

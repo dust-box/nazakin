@@ -3,14 +3,25 @@
     "title": "{{ .Title }}",
     "home_page_url": "{{ .Site.BaseURL }}",
     "feed_url": "{{ with .OutputFormats.Get "json" -}}{{ .Permalink | safeURL }}{{ end }}",
+    {{ with .NextInSection }}
+    "next_url": "{{ .Permalink | absURL }}",
+    "next_title": "{{ .Title }}",
+    {{ if .Params.image }}"next_image": "{{ .Params.image | absURL }}",{{end}}
+    {{ end }}
+    {{ with .PrevInSection }}
+    "previous_url": "{{ .Permalink | absURL }}",
+    "previous_title": "{{ .Title }}",
+    {{ if .Params.image }}"previous_image": "{{ .Params.image | absURL }}",{{end}}
+    {{ end }}
     "items": [
         {
-            "id": "{{ .UniqueID }}",
+            "id": "{{ .Params.slug }}",
             "url": "{{ .Permalink }}",
             "title": "{{ .Title }}",
+            "summary": "{{ if .Params.excerpt }}{{ replaceRE "\n" "" (.Params.excerpt | plainify) }}{{ else }}{{ replaceRE "\n" "" (.Summary | plainify) }}{{ end }}",
             "content_html": "{{ replaceRE " +" " " (replaceRE "\n" "" .Content) | htmlEscape }}",
-            "image": "{{ .Params.Image | absURL }}",
-            "date_published": "{{ .Date }}",
+            "image": "{{ if .Params.Image }}{{ .Params.Image | absURL }}{{ end }}",
+            "date_published": "{{ .Date.Format "Monday, Jan 2, 2006" | safeHTML }}",
             "author": "{{ .Params.author }}",
             "tags": [{{ if .Params.tags }}"{{ delimit .Params.tags "\",\"" }}"{{ end }}]
         }
