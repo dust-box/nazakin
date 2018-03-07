@@ -10,7 +10,7 @@ share = true	# set false to hide share buttons
 menu= ""		# set "main" to add this content to the main menu
 author = "Gomibako"
 +++
-この度、めでたく定職をいただきました。  <!--more-->
+この度、めでたく定職をいただきました。<!--more-->  
 キャンプ地の管理人です。
 
 {{% img alt="どうぶつの森" src="2017/11/24/cover.jpg" w="675" h="1200" %}}

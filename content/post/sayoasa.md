@@ -6,7 +6,7 @@ draft = false
 image = ""
 share = true	# set false to hide share buttons
 slug = "sayoasa"
-tags = ["movie"]
+tags = ["movie","anime"]
 title = "「さよならの朝に約束の花をかざろう」を観てきました"
 +++
 その前に観た映画はFate/stay night[HF]です。私です。<!--more-->

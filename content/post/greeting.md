@@ -10,7 +10,7 @@ share = true	# set false to hide share buttons
 menu= ""		# set "main" to add this content to the main menu
 author = "Gimibako"
 +++
-私はもはや人生を一からやり直すべきではという話だよ。<!--more-->
+私はもはや人生を一からやり直すべきではという話だよ。<!--more-->  
 
 30年ぶりの更新です。  
 みなさまいかがお過ごしでしょうか。

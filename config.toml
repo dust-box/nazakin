@@ -34,3 +34,5 @@ copyright = "&copy; 2017 DUSTBOX."
 home = ["HTML", "RSS", "JSON"]
 post = ["HTML", "AMP", "JSON"]
 page = ["HTML", "AMP", "JSON"]
+section = ["HTML","AMP","JSON"]
+tags = ["HTML", "AMP", "JSON"]
