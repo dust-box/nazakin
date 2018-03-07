@@ -4,16 +4,6 @@
     "home_page_url": "{{ .Site.BaseURL }}",
     "feed_url": "{{ with .OutputFormats.Get "json" -}}{{ .Permalink | safeURL }}{{ end }}",
     "items": [
-        {{ range $index, $page := .Data.Pages }}{{ if $index }},{{ end }}{
-            "id": "{{ .Params.slug }}",
-            "url": "{{ .Permalink }}",
-            "title": "{{ .Title }}",
-            "summary": "{{ if .Params.excerpt }}{{ replaceRE "\n" "" (.Params.excerpt | plainify) }}{{ else }}{{ replaceRE "\n" "" (.Summary | plainify) }}{{ end }}",
-            "content_html": "{{ replaceRE " +" " " (replaceRE "\n" "" .Content) | htmlEscape }}",
-            "image": "{{ if .Params.Image }}{{ .Params.Image | absURL }}{{ end }}",
-            "date_published": "{{ .Date.Format "Monday, Jan 2, 2006" | safeHTML }}",
-            "author": "{{ .Params.author }}",
-            "tags": [{{ if .Params.tags }}"{{ delimit .Params.tags "\",\"" }}"{{ end }}]
-        }{{ end }}
+        {{ range $index, $page := .Data.Pages }}{{ if eq .Section "post" }}{{ if $index }},{{ end }}{{ partial "post.json" . }}{{ end }}{{ end }}
     ]
 }

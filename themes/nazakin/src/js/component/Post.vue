@@ -16,6 +16,10 @@
             </header>
 
             <div class="post-content" v-html="unescape(post.content_html)"></div>
+
+            <div class="post-content">
+                <Share :url="post.url" :title="post.title + ' - ' + site.title"></Share>
+            </div>
         </article>
     </template>
 </div>
@@ -33,9 +37,16 @@
 
 <script>
 import url from 'url';
+import Share from 'component/Share';
 
 export default {
     name: 'Post',
+    metaInfo: function() {
+        return {
+            title: `${this.post.title} - ${this.site.title}`,
+        }
+    },
+    components: { Share },
     computed: {
         post: function() {
             if (this.$store.getters['posts/item'].items) {
@@ -43,7 +54,9 @@ export default {
             } else {
                 return {};
             }
-            
+        },
+        site: function() {
+            return this.$store.getters['posts/item'].items ? this.$store.getters['posts/item'].site : {}
         },
         next: function() {
             const item = this.$store.getters['posts/item'];
@@ -63,14 +76,11 @@ export default {
         }
     },
     beforeMount: function() {
-        console.log('test');
         this.$store.dispatch('posts/fetchPost', this.$route.params.id);
     },
     beforeRouteUpdate: function(to, from, next) {
-        console.log('route update');
-        console.log(to.params.id);
-        this.$store.dispatch('posts/fetchPost', to.params.id);
-        next();
+        this.$store.dispatch('posts/fetchPost', to.params.id)
+            .then(() => next());
     },
     methods: {
         dateFormat(str) {

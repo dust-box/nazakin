@@ -6,10 +6,14 @@ export default {
     state: {
         items: [],
         item: {},
+        tags: [],
     },
     getters: {
         items: state => state.items,
         item: state => state.item,
+        tags: (state) => (tagname) => {
+            return state.items.filter(item => item.tags.indexOf(tagname) >= 0);
+        },
     },
     mutations: {
         getItems (state, res) {
@@ -17,7 +21,7 @@ export default {
         },
         getItem (state, res) {
             state.item = res.data;
-        }
+        },
     },
     actions: {
         async fetchPosts ({ commit }) {
@@ -27,7 +31,7 @@ export default {
         async fetchPost ({ commit }, id) {
             const item = {};
             if (!id) return item;
-            commit('getItem', await request.get(`/post/${id}/index.json`));
-        }
+            return commit('getItem', await request.get(`/post/${id}/index.json`));
+        },
     }
 };
